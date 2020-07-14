@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather Dashboard</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@600&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <div class="container">
+      <!-- header -->
+      <div class="row">
+        <h1>Weather Dashboard</h1>
+      </div>
+
+      <!-- main body -->
+      <div class="row">
+        <!-- search bar -->
+        <div class="col1">
+          <div class="searchText">Search for a City:</div>
+          <!-- search bar -->
+          <div class="input"><input type="text" /><button>search</button></div>
+          <div class="cityPop">
+            <div class="cityName">
+              <ul class="nameList"></ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- main display -->
+        <div class="col2">
+          <!-- display today weather detail -->
+          <div class="dashboard">
+            <div class="name"></div>
+            <div class="temperature"></div>
+            <div class="humidity"></div>
+            <div class="windSpeed"></div>
+            <div class="uvIndex"></div>
+          </div>
+          <!-- display 5-Day Forecast -->
+          <div class="forecast">
+            <div id="forecastHeader">5-Day Forecast:</div>
+            <div class="containFor">
+              <div class="box">
+                <div class="time"></div>
+                <div class="icon"></div>
+                <div class="temp"></div>
+                <div class="hum"></div>
+              </div>
+              <div class="box">
+                <div class="time"></div>
+                <div class="icon"></div>
+                <div class="temp"></div>
+                <div class="hum"></div>
+              </div>
+              <div class="box">
+                <div class="time"></div>
+                <div class="icon"></div>
+                <div class="temp"></div>
+                <div class="hum"></div>
+              </div>
+              <div class="box">
+                <div class="time"></div>
+                <div class="icon"></div>
+                <div class="temp"></div>
+                <div class="hum"></div>
+              </div>
+              <div class="box">
+                <div class="time"></div>
+                <div class="icon"></div>
+                <div class="temp"></div>
+                <div class="hum"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!--  -->
+      </div>
+    </div>
+  </body>
+</html>
