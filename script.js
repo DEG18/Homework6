@@ -49,7 +49,7 @@ function init(cityName) {
   });
 }
 
-init("Shenzhen");
+init("Miami");
 // UV Index function
 function ultravioletIndex(a, b) {
   lat = a;
@@ -75,16 +75,27 @@ function ultravioletIndex(a, b) {
   });
 }
 
-function forecastWeather() {
+forecastWeather("Miami");
+function forecastWeather(cityName) {
   const myKey = "7606e46f97d640418fe92da8694cbd65";
-  var city = "Shenzhen";
+  var city = cityName;
   //   api.openweathermap.org/data/2.5/forecast/daily?q={city name}&cnt={cnt}&appid={your api key}
   var queryURLforecast =
-    "api.openweathermap.org/data/2.5/forecast/daily?q=" +
+    "https://api.openweathermap.org/data/2.5/forecast?q=" +
     city +
-    "&mode=xml&units=imperial&cnt=5";
+    "&appid=" +
+    myKey +
+    "&units=imperial";
   $.ajax({ url: queryURLforecast, method: "GET" }).then(function (responsefor) {
     console.log(responsefor);
+    // get the date
+    console.log(responsefor.list[6].dt_txt);
+    // get the icon
+    console.log(responsefor.list[6].weather[0].icon);
+    // get the temp
+    console.log(responsefor.list[6].main.temp);
+    // get the hum
+    console.log(responsefor.list[6].main.humidity);
   });
 }
 
