@@ -3,6 +3,8 @@ $(".search").on("click", function () {
   var cityName = $("#input").val();
   init(cityName);
   forecastWeather(cityName);
+  //   var popCity = $("<li>").text(cityName);
+  //   $(popCity).appendTo(".nameList");
 });
 
 function init(cityName) {
@@ -53,7 +55,6 @@ function init(cityName) {
   });
 }
 
-// init("Miami");
 // UV Index function
 function ultravioletIndex(a, b) {
   lat = a;
@@ -79,7 +80,6 @@ function ultravioletIndex(a, b) {
   });
 }
 
-// forecastWeather("Miami");
 function forecastWeather(cityName) {
   const myKey = "7606e46f97d640418fe92da8694cbd65";
   var city = cityName;

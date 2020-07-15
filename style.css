@@ -42,8 +42,42 @@ h1 {
 
 input {
   width: 70%;
-  height: auto;
+  height: 36px;
   line-height: 1.5em;
+  border: none;
+  background-color: white;
+  padding: 10px;
+  font-family: "Source Sans Pro", sans-serif;
+  font-size: 25px;
+}
+
+.search {
+  width: 30%;
+  height: 36px;
+  background-color: lightblue;
+  border: none;
+  padding: none;
+  position: relative;
+  top: -4px;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+  background-color: none;
+}
+
+li {
+  height: 50px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  padding: 5px;
+  background-color: white;
+  color: rgb(83, 83, 83);
+  font-size: 1.5em;
+  line-height: 1.5;
+  font-family: "Source Sans Pro", sans-serif;
+  font-size: 30px;
 }
 
 .col2 {
@@ -63,7 +97,7 @@ input {
   line-height: 2.5em;
   padding: 20px;
   border-color: gray;
-  border-radius: 2%;
+  border-radius: 1%;
 }
 
 .info {
