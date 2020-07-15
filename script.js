@@ -1,3 +1,10 @@
+// create a button lisenter and push it to city
+$(".search").on("click", function () {
+  var cityName = $("#input").val();
+  init(cityName);
+  forecastWeather(cityName);
+});
+
 function init(cityName) {
   var city = cityName;
   const myKey = "7606e46f97d640418fe92da8694cbd65";
@@ -27,12 +34,9 @@ function init(cityName) {
     console.log(response.wind.speed);
     $(".windSpeed").text("Wind Speed: " + response.wind.speed + " mph");
     // get the icon id
+    $(".iconinfo").empty();
     console.log(response.weather[0].icon);
     var icon = response.weather[0].icon;
-    // var imgTag = $("<img>").attr(
-    //   "scr",
-    //   `http://openweathermap.org/img/wn/${icon}@2x.png`
-    // );
     var imgTag = $("<img>").attr(
       "src",
       `http://openweathermap.org/img/wn/${icon}@2x.png`
@@ -49,7 +53,7 @@ function init(cityName) {
   });
 }
 
-init("Miami");
+// init("Miami");
 // UV Index function
 function ultravioletIndex(a, b) {
   lat = a;
@@ -75,7 +79,7 @@ function ultravioletIndex(a, b) {
   });
 }
 
-forecastWeather("Miami");
+// forecastWeather("Miami");
 function forecastWeather(cityName) {
   const myKey = "7606e46f97d640418fe92da8694cbd65";
   var city = cityName;
@@ -88,15 +92,32 @@ function forecastWeather(cityName) {
     "&units=imperial";
   $.ajax({ url: queryURLforecast, method: "GET" }).then(function (responsefor) {
     console.log(responsefor);
-    // get the date
-    console.log(responsefor.list[6].dt_txt);
-    // get the icon
-    console.log(responsefor.list[6].weather[0].icon);
-    // get the temp
-    console.log(responsefor.list[6].main.temp);
-    // get the hum
-    console.log(responsefor.list[6].main.humidity);
+    for (var i = 0; i < 5; i++) {
+      var start = i * 8 + 6;
+      var index = i + 1;
+      // get the date
+      console.log(responsefor.list[start].dt_txt);
+      var date = responsefor.list[start].dt_txt;
+      $(`#time${index}`).text(date.slice(0, 10));
+      // get the icon
+      $(`#icon${index}`).empty();
+      console.log(responsefor.list[start].weather[0].icon);
+      var icon = responsefor.list[start].weather[0].icon;
+      var imgTag = $("<img>").attr(
+        "src",
+        `http://openweathermap.org/img/wn/${icon}@2x.png`
+      );
+      $(imgTag).appendTo(`#icon${index}`);
+      // get the temp
+      console.log(responsefor.list[start].main.temp);
+      $(`#temp${index}`).text(
+        "Temp: " + responsefor.list[start].main.temp + " °F"
+      );
+      // get the hum
+      console.log(responsefor.list[start].main.humidity);
+      $(`#hum${index}`).text(
+        "Humidity: " + responsefor.list[start].main.humidity + "%"
+      );
+    }
   });
 }
-
-// create a button lisenter and push it to city
