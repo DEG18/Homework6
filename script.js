@@ -46,6 +46,7 @@ function init(cityName) {
     $(imgTag).appendTo(".iconinfo");
     $("<img>").attr("alt", "weather icon");
     $("<img>").attr("class", "dashIcon");
+    $(".description").text(response.weather[0].description);
     // get the UV index and display at class='uvIndex'
     console.log(response.coord.lat);
     var la = response.coord.lat;

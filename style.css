@@ -2,6 +2,10 @@
   box-sizing: border-box;
 }
 
+body {
+  min-width: 1420px;
+}
+
 .containFor {
   min-width: 100%;
 }
@@ -104,8 +108,12 @@ li {
   float: left;
 }
 
-.iconinfo {
+/* .iconinfo {
   float: left;
+} */
+
+.des {
+  float: right;
 }
 
 .forecast {
