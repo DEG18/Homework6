@@ -46,7 +46,7 @@ function init(cityName) {
     $(imgTag).appendTo(".iconinfo");
     $("<img>").attr("alt", "weather icon");
     $("<img>").attr("class", "dashIcon");
-    $(".description").text(response.weather[0].description);
+    $(".description").text("Description: " + response.weather[0].description);
     // get the UV index and display at class='uvIndex'
     console.log(response.coord.lat);
     var la = response.coord.lat;
@@ -63,13 +63,18 @@ function ultravioletIndex(a, b) {
   const myKey = "7606e46f97d640418fe92da8694cbd65";
   // http://api.openweathermap.org/data/2.5/uvi?appid={appid}&lat={lat}&lon={lon}
   var queryURLuv =
-    "http://api.openweathermap.org/data/2.5/uvi?appid=" +
+    "https://api.openweathermap.org/data/2.5/uvi?q=" +
+    city +
+    "&appid=" +
     myKey +
-    "&lat=" +
-    lat +
-    "&lon=" +
-    lon +
-    "&cnt={5}";
+    "&units=imperial";
+
+  // "http://api.openweathermap.org/data/2.5/uvi?appid=" +
+  // myKey +
+  // "&lat=" +
+  // lat +
+  // "&lon=" +
+  // lon;
   $.ajax({ url: queryURLuv, method: "GET" }).then(function (responseuv) {
     console.log(responseuv);
     // get the UV index and display at class='uvIndex'
@@ -94,7 +99,7 @@ function forecastWeather(cityName) {
   $.ajax({ url: queryURLforecast, method: "GET" }).then(function (responsefor) {
     console.log(responsefor);
     for (var i = 0; i < 5; i++) {
-      var start = i * 8 + 6;
+      var start = i * 8;
       var index = i + 1;
       // get the date
       console.log(responsefor.list[start].dt_txt);

@@ -108,9 +108,10 @@ li {
   float: left;
 }
 
-/* .iconinfo {
-  float: left;
-} */
+.iconinfo > img {
+  width: 200px;
+  height: auto;
+}
 
 .des {
   float: right;
