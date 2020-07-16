@@ -63,23 +63,17 @@ function ultravioletIndex(a, b) {
   const myKey = "7606e46f97d640418fe92da8694cbd65";
   // http://api.openweathermap.org/data/2.5/uvi?appid={appid}&lat={lat}&lon={lon}
   var queryURLuv =
-    "https://api.openweathermap.org/data/2.5/uvi?q=" +
-    city +
-    "&appid=" +
+    "http://api.openweathermap.org/data/2.5/uvi?appid=" +
     myKey +
-    "&units=imperial";
-
-  // "http://api.openweathermap.org/data/2.5/uvi?appid=" +
-  // myKey +
-  // "&lat=" +
-  // lat +
-  // "&lon=" +
-  // lon;
+    "&lat=" +
+    lat +
+    "&lon=" +
+    lon;
   $.ajax({ url: queryURLuv, method: "GET" }).then(function (responseuv) {
     console.log(responseuv);
     // get the UV index and display at class='uvIndex'
     console.log(responseuv.value);
-    $(".uvIndex").text("UV Index: " + responseuv.value);
+    // $(".uvIndex").text("UV Index: " + responseuv.value);
     console.log(responseuv.date_iso);
     var date = responseuv.date_iso;
     $(".date").text(date.slice(0, 10));
