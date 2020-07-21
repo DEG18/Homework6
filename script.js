@@ -41,7 +41,7 @@ function init(cityName) {
     var icon = response.weather[0].icon;
     var imgTag = $("<img>").attr(
       "src",
-      `http://openweathermap.org/img/wn/${icon}@2x.png`
+      `https://openweathermap.org/img/wn/${icon}@2x.png`
     );
     $(imgTag).appendTo(".iconinfo");
     $("<img>").attr("alt", "weather icon");
@@ -105,7 +105,7 @@ function forecastWeather(cityName) {
       var icon = responsefor.list[start].weather[0].icon;
       var imgTag = $("<img>").attr(
         "src",
-        `http://openweathermap.org/img/wn/${icon}@2x.png`
+        `https://openweathermap.org/img/wn/${icon}@2x.png`
       );
       $(imgTag).appendTo(`#icon${index}`);
       // get the temp
