@@ -1,6 +1,13 @@
+refresh();
+function refresh() {
+  init(localStorage.getItem("nameOfCity"));
+  forecastWeather(localStorage.getItem("nameOfCity"));
+}
+
 // create a button lisenter and push it to city
 $(".search").on("click", function () {
   var cityName = $("#input").val();
+  localStorage.setItem("nameOfCity", `${cityName}`);
   init(cityName);
   forecastWeather(cityName);
   //   var popCity = $("<li>").text(cityName);
@@ -121,3 +128,10 @@ function forecastWeather(cityName) {
     }
   });
 }
+
+// $(".btn").click(function (e) {
+//   e.preventDefault();
+//   var name = $(this).val();
+//   console.log(name);
+//   init(name);
+// });
