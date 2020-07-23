@@ -129,9 +129,10 @@ function forecastWeather(cityName) {
   });
 }
 
-// $(".btn").click(function (e) {
-//   e.preventDefault();
-//   var name = $(this).val();
-//   console.log(name);
-//   init(name);
-// });
+$(".btn").click(function (e) {
+  e.preventDefault();
+  var name = $(this).val();
+  console.log(name);
+  init(name);
+  localStorage.setItem("nameOfCity", `${name}`);
+});

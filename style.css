@@ -84,6 +84,16 @@ li {
   font-size: 30px;
 }
 
+.btn {
+  border-color: transparent;
+  background-color: transparent;
+  color: rgb(83, 83, 83);
+  font-size: 1.5em;
+  line-height: 1.5;
+  font-family: "Source Sans Pro", sans-serif;
+  font-size: 30px;
+}
+
 .col2 {
   min-width: 78%;
   height: 856px;
