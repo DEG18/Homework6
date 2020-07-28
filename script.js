@@ -134,5 +134,6 @@ $(".btn").click(function (e) {
   var name = $(this).val();
   console.log(name);
   init(name);
+  forecastWeather(name);
   localStorage.setItem("nameOfCity", `${name}`);
 });
